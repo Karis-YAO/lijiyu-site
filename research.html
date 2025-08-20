@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title data-en="Research - Prof. Li Jiyu Lab">Research - Prof. Li Jiyu Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 左侧三栏导航 */
+        .research-nav{display:flex;flex-direction:column;width:220px;margin-right:30px;}
+        .research-nav a{padding:12px 16px;margin:4px 0;background:#f7f7f7;border-radius:4px;text-decoration:none;color:#333;font-weight:bold;}
+        .research-nav a.active,
+        .research-nav a:hover{background:#005ce6;color:#fff;}
+
+        /* 内容区 */
+        .research-content{flex:1;}
+        .panel{display:none;}
+        .panel:target{display:block;}
+
+        /* 研究方向：横向卡片 */
+        .direction-gallery{display:flex;flex-wrap:wrap;gap:20px;}
+        .direction-card{width:220px;text-align:center;}
+        .direction-card img{width:100%;height:140px;object-fit:cover;border-radius:4px;}
+
+        /* 研究成果 & 科研平台：单列竖排 */
+        .v-gallery{display:flex;flex-direction:column;gap:25px;}
+        .v-card{display:flex;align-items:center;gap:15px;}
+        .v-card img{width:660px;height:auto;border-radius:4px;}
+        .v-card p{margin:0;font-size:15px;line-height:1.4;}
+    </style>
 </head>
 <body>
 <header>
@@ -24,17 +48,150 @@
         </nav>
     </div>
 </header>
-<main>
-    <section class="page-banner"><h2 data-en="Research">Research</h2></section>
-    <section class="container">
-        <h3 data-en="Research Areas">Research Areas</h3>
-        <ul>
-            <li>Wearable flexible sensors & systems</li>
-            <li>Implantable bio-electronic interfaces</li>
-            <li>AI-driven health-monitoring algorithms</li>
-        </ul>
-    </section>
+
+<main class="container" style="display:flex;align-items:flex-start;padding-top:40px;">
+    <!-- 左侧三栏导航 -->
+    <nav class="research-nav">
+        <a href="#direction" class="active" data-en="Research Direction" data-zh="研究方向">Research Direction</a>
+        <a href="#achievements" data-en="Achievements" data-zh="研究成果">Achievements</a>
+        <a href="#platform" data-en="Research Platform" data-zh="科研平台">Research Platform</a>
+    </nav>
+
+    <!-- 右侧内容区 -->
+    <div class="research-content">
+        <!-- ===== 研究方向 ===== -->
+        <section id="direction" class="panel">
+            <h3 data-en="Research Direction—Medical-grade Flexible Medical Electronic Systems"
+                data-zh="研究方向—医疗级柔性医用电子系统的开发">
+                Research Direction—Medical-grade Flexible Medical Electronic Systems
+            </h3>
+        
+            <!-- 横幅示意图 -->
+            <div style="text-align:center;margin:20px 0;">
+                <img src="img/ResearchPage/ResearchDirection.png" alt="Research Direction" style="max-width:100%;height:auto;border-radius:4px;">
+            </div>
+        
+            <!-- 三大核心方向 -->
+            <div style="margin-top:20px;">
+                <ul style="list-style:none;padding-left:0;">
+                    <!-- 1 -->
+                    <li style="margin-bottom:20px;">
+                        <strong data-en="1. Flexible physiological signal sensor devices" data-zh="1. 柔性生理信号传感器件"></strong>
+                        <ul style="margin-left:20px;margin-top:4px;">
+                            <li data-en="Multi-modal physiological signal sensors" data-zh="多模态生理信号传感器"></li>
+                            <li data-en="Flexible medical materials" data-zh="柔性医用材料"></li>
+                        </ul>
+                    </li>
+        
+                    <!-- 2 -->
+                    <li style="margin-bottom:20px;">
+                        <strong data-en="2. High-power-density flexible electronics" data-zh="2. 高功率密度柔性电子设备"></strong>
+                        <ul style="margin-left:20px;margin-top:4px;">
+                            <li data-en="Intrinsically stretchable temperature/humidity management technology" data-zh="本征可拉伸柔性温/湿度管理技术"></li>
+                            <li data-en="Flexible power supply systems" data-zh="柔性供能系统"></li>
+                        </ul>
+                    </li>
+        
+                    <!-- 3 -->
+                    <li style="margin-bottom:20px;">
+                        <strong data-en="3. AI-driven wearable digital medical systems" data-zh="3. 基于深度学习的穿戴式数字医疗系统"></strong>
+                        <ul style="margin-left:20px;margin-top:4px;">
+                            <li data-en="AI-driven health data analysis" data-zh="人工智能驱动的健康数据分析"></li>
+                            <li data-en="5G remote medical applications" data-zh="5G远程医疗应用"></li>
+                        </ul>
+                    </li>
+                </ul>
+        
+                <p style="margin-top:20px;font-size:20px;line-height:1.6;"
+                   data-en="Centered on the national strategic needs for people's life and health, we aim to alleviate the current pressure on medical resources and make a real contribution."
+                   data-zh="围绕国家在人民生命健康方面的战略需求，缓解当前医疗资源紧张所带来的压力，切切实实地做出一点贡献。">
+                    围绕国家在人民生命健康方面的战略需求，缓解当前医疗资源紧张所带来的压力，切切实实地做出一点贡献。
+                </p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+            </div>
+        </section>
+
+        <!-- 研究成果 -->
+        <section id="achievements" class="panel">
+            <h3 data-en="Representative Research" data-zh="代表性研究成果">Representative Research</h3>
+            <div class="v-gallery">
+                <div class="v-card">
+                    <img src="img/ResearchPage/Paper1Title.jpg" alt="Paper 1">
+                </div>
+                <div class="v-card">
+                    <img src="img/ResearchPage/Paper2Title.jpg" alt="Paper 2">
+                </div>
+                <div class="v-card">
+                    <img src="img/ResearchPage/Paper3Title.jpg" alt="Paper 3">
+                </div>
+                <div class="v-card">
+                    <img src="img/ResearchPage/Paper4Title.jpg" alt="Paper 4">
+                </div>
+                <div class="v-card">
+                    <img src="img/ResearchPage/Paper5Title.jpg" alt="Paper 5">
+                </div>
+            </div>
+        </section>
+
+        <!-- 科研平台 -->
+        <section id="platform" class="panel">
+            <h3 data-en="Research Platform" data-zh="科研平台">Research Platform</h3>
+            <div class="v-gallery">
+                <div class="v-card">
+                    <img src="img/Instrument1.jpg" alt="Instrument 1">
+                    <p data-en="Clean room" data-zh="洁净间"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument2.jpg" alt="Instrument 2">
+                    <p data-en="3D printer" data-zh="3D打印机"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument3.jpg" alt="Instrument 3">
+                    <p data-en="Spin coater" data-zh="旋涂仪"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument4.jpg" alt="Instrument 4">
+                    <p data-en="Laser cutter" data-zh="激光切割机"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument5.jpg" alt="Instrument 5">
+                    <p data-en="SEM" data-zh="扫描电镜"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument6.jpg" alt="Instrument 6">
+                    <p data-en="Electrochemical workstation" data-zh="电化学工作站"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument7.jpg" alt="Instrument 7">
+                    <p data-en="FTIR spectrometer" data-zh="红外光谱仪"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument8.jpg" alt="Instrument 8">
+                    <p data-en="Thermal evaporator" data-zh="热蒸发仪"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument9.jpg" alt="Instrument 9">
+                    <p data-en="Mechanical tester" data-zh="力学测试机"></p>
+                </div>
+                <div class="v-card">
+                    <img src="img/Instrument10.jpg" alt="Instrument 10">
+                    <p data-en="Impedance analyzer" data-zh="阻抗分析仪"></p>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
+
 <script src="js/lang.js"></script>
+<script>
+    /* 点击左侧导航高亮当前栏目 */
+    document.querySelectorAll('.research-nav a').forEach(a=>{
+        a.addEventListener('click',()=>{
+            document.querySelectorAll('.research-nav a').forEach(el=>el.classList.remove('active'));
+            a.classList.add('active');
+        });
+    });
+</script>
 </body>
 </html>

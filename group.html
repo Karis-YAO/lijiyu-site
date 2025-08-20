@@ -2,46 +2,238 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title data-en="Group - Prof. Li Jiyu Lab">Group - Prof. Li Jiyu Lab</title>
+    <title data-en="Group - Prof. Li Jiyu Lab" data-zh="课题组 - 李冀豫课题组">Group - Prof. Li Jiyu Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .member-card {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            height: 540px;                     /* 固定卡片高度 */
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .photo-wrap {
+            width: 100%;
+            height: 480px;                     /* 统一照片区高度 */
+            overflow: hidden;
+        }
+        .photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;                /* 裁切居中，不变形 */
+            display: block;
+        }
+        .member-info {
+            flex: 1;
+            padding: 15px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;   /* 三行对齐 */
+            text-align: center;
+        }
+        .member-info h4 { margin: 0; font-size: 18px; color: #000; }
+        .member-info p  { margin: 5px 0; font-size: 14px; color: #333; }
+        .member-info a  { color: #005ce6; text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .team-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 <header>
-    <div class="container header-flex">
-        <button id="langBtn" type="button">中</button>
-        <a href="index.html" class="logo" data-en="Prof. Li Jiyu Lab" data-zh="李冀豫课题组">Prof. Li Jiyu Lab</a>
-        <nav>
-            <ul>
-                <li><a href="index.html" data-en="Home" data-zh="主页">Home</a></li>
-                <li><a href="about.html" data-en="About" data-zh="个人介绍">About</a></li>
-                <li><a href="group.html" data-en="Group" data-zh="课题组">Group</a></li>
-                <li><a href="research.html" data-en="Research" data-zh="学术研究">Research</a></li>
-                <li><a href="news.html" data-en="News" data-zh="新闻中心">News</a></li>
-                <li><a href="industry.html" data-en="Industry" data-zh="产学研转化">Industry</a></li>
-                <li><a href="recruitment.html" data-en="Join Us" data-zh="招生招聘">Join Us</a></li>
-                <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+	<div class="container header-flex">
+	    <button id="langBtn" type="button">中</button>
+	    <a href="index.html" class="logo" data-en="Prof. Li Jiyu Lab" data-zh="李冀豫课题组">Prof. Li Jiyu Lab</a>
+	    <nav>
+	        <ul>
+	            <li><a href="index.html" data-en="Home" data-zh="主页">Home</a></li>
+	            <li><a href="about.html" data-en="About" data-zh="个人介绍">About</a></li>
+	            <li><a href="group.html" data-en="Group" data-zh="课题组">Group</a></li>
+	            <li><a href="research.html" data-en="Research" data-zh="学术研究">Research</a></li>
+	            <li><a href="news.html" data-en="News" data-zh="新闻中心">News</a></li>
+	            <li><a href="industry.html" data-en="Industry" data-zh="产学研转化">Industry</a></li>
+	            <li><a href="recruitment.html" data-en="Join Us" data-zh="招生招聘">Join Us</a></li>
+	            <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+	        </ul>
+	    </nav>
+	</div>
 </header>
+
 <main>
-    <section class="page-banner"><h2 data-en="Group">Group</h2></section>
     <section class="container">
-        <h3 data-en="Team Size">Team Size</h3>
-        <ul>
-            <li>1 Professor</li>
-            <li>3 Postdocs</li>
-            <li>8 PhD students</li>
-            <li>12 Master students</li>
-        </ul>
-        <h3 data-en="Research Groups">Research Groups</h3>
-        <ul>
-            <li>Soft Bio-Electronics Devices</li>
-            <li>AI Medical Imaging</li>
-            <li>Wearable Systems & Applications</li>
-        </ul>
+        <h3 data-en="Team Members" data-zh="团队成员">Team Members</h3>
+        <div class="team-grid">
+            <!-- 董科 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/DongKePhoto.jpg" alt="Dong Ke">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Dong Ke" data-zh="董科">Dong Ke</h4>
+                    <p data-en="Research Assistant" data-zh="科研助理">Research Assistant</p>
+                    <a href="mailto:dongk9@mail.sysu.edu.cn">dongk9@mail.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 孙佳浩 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/SunJiahaoPhoto.jpg" alt="Sun Jiahao">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Sun Jiahao" data-zh="孙佳浩">Sun Jiahao</h4>
+                    <p data-en="Master 2025" data-zh="2025级硕士生">Master 2025</p>
+                    <a href="mailto:sunjh33@mail2.sysu.edu.cn">sunjh33@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 蔡镕 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/CaiRongPhoto.jpg" alt="Cai Rong">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Cai Rong" data-zh="蔡镕">Cai Rong</h4>
+                    <p data-en="Undergraduate 2022" data-zh="2022级本科生">Undergraduate 2022</p>
+                    <a href="mailto:cair9@mail2.sysu.edu.cn">cair9@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 李嘉晖 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/LiJiahuiPhoto.jpg" alt="Li Jiahui">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Li Jiahui" data-zh="李嘉晖">Li Jiahui</h4>
+                    <p data-en="Undergraduate 2022" data-zh="2022级本科生">Undergraduate 2022</p>
+                    <a href="mailto:lijh398@mail2.sysu.edu.cn">lijh398@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 李丹 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/LiDanPhoto.jpg" alt="Li Dan">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Li Dan" data-zh="李丹">Li Dan</h4>
+                    <p data-en="Undergraduate 2023" data-zh="2023级本科生">Undergraduate 2023</p>
+                    <a href="mailto:lidan267@mail2.sysu.edu.cn">lidan267@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 冼晴怡 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/XianQingyiPhoto.jpg" alt="Xian Qingyi">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Xian Qingyi" data-zh="冼晴怡">Xian Qingyi</h4>
+                    <p data-en="Undergraduate 2023" data-zh="2023级本科生">Undergraduate 2023</p>
+                    <a href="mailto:xianqy5@mail2.sysu.edu.cn">xianqy5@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 萧婷婷 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/XiaoTingtingPhoto.jpg" alt="Xiao Tingting">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Xiao Tingting" data-zh="萧婷婷">Xiao Tingting</h4>
+                    <p data-en="Undergraduate 2023" data-zh="2023级本科生">Undergraduate 2023</p>
+                    <a href="mailto:xiaott6@mail2.sysu.edu.cn">xiaott6@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 肖雅文 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/XiaoYawenPhoto.jpg" alt="Xiao Yawen">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Xiao Yawen" data-zh="肖雅文">Xiao Yawen</h4>
+                    <p data-en="Undergraduate 2023" data-zh="2023级本科生">Undergraduate 2023</p>
+                    <a href="mailto:xiaoyw8@mail2.sysu.edu.cn">xiaoyw8@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 詹恩畅 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/ZhanEnchangPhoto.jpg" alt="Zhan Enchang">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Zhan Enchang" data-zh="詹恩畅">Zhan Enchang</h4>
+                    <p data-en="Undergraduate 2023" data-zh="2023级本科生">Undergraduate 2023</p>
+                    <a href="mailto:hanench@mail2.sysu.edu.cn">hanench@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 卢俊贤 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/LuJunxianPhoto.jpg" alt="Lu Junxian">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Lu Junxian" data-zh="卢俊贤">Lu Junxian</h4>
+                    <p data-en="Undergraduate 2024" data-zh="2024级本科生">Undergraduate 2024</p>
+                    <a href="mailto:lujx67@mail2.sysu.edu.cn">lujx67@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 覃芊鹤 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/QinQianhePhoto.jpg" alt="Qin Qianhe">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Qin Qianhe" data-zh="覃芊鹤">Qin Qianhe</h4>
+                    <p data-en="Undergraduate 2024" data-zh="2024级本科生">Undergraduate 2024</p>
+                    <a href="mailto:qqh1108@126.com">qqh1108@126.com</a>
+                </div>
+            </div>
+
+            <!-- 王锦 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/WangJinPhoto.jpg" alt="Wang Jin">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Wang Jin" data-zh="王锦">Wang Jin</h4>
+                    <p data-en="Undergraduate 2024" data-zh="2024级本科生">Undergraduate 2024</p>
+                    <a href="mailto:wangj993@mail2.sysu.edu.cn">wangj993@mail2.sysu.edu.cn</a>
+                </div>
+            </div>
+
+            <!-- 姚凯馨 -->
+            <div class="member-card">
+                <div class="photo-wrap">
+                    <img src="img/GroupPage/YaoKaixinPhoto.jpg" alt="Yao Kaixin">
+                </div>
+                <div class="member-info">
+                    <h4 data-en="Yao Kaixin" data-zh="姚凯馨">Yao Kaixin</h4>
+                    <p data-en="Undergraduate 2024" data-zh="2024级本科生">Undergraduate 2024</p>
+                    <a href="mailto:ykx_Karis@163.com">ykx_Karis@163.com</a>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
+
 <script src="js/lang.js"></script>
 </body>
 </html>
