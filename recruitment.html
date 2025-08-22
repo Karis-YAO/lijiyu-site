@@ -29,7 +29,7 @@
         .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;}
         .page-banner{background:#f2f6ff;padding:70px 20px;text-align:center;}
         .page-banner h2{font-size:32px;}
-        /* 1. 让 profile 保持居中，但内部文字整体再缩 20 px */
+       
         .profile{
             max-width:1100px;
             margin:0 auto;
@@ -40,7 +40,7 @@
         .profile ul,
         .profile ol{
             list-style: disc;
-            padding-left: 40px;      /* 20+20，正好与外层留白相加为 40 px */
+            padding-left: 40px;      
             margin: 0 0 1em 0;
         }
 
@@ -54,7 +54,6 @@
 
         footer{background:#111;color:#fff;text-align:center;padding:20px 0;margin-top:60px;}
         
-        /* 新增样式 */
         .blue-title {
             color: #0066cc;
             font-weight: bold;
@@ -220,45 +219,45 @@
 </footer>
 
 <script>
-    // 语言切换功能
+    // Language toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
         const langBtn = document.getElementById('langBtn');
+        let currentLang = 'en';
         
-        // 从localStorage获取语言设置，如果没有则默认为中文
-        let isChinese = localStorage.getItem('language') !== 'english';
+        // Check if language is saved in localStorage
+        if (localStorage.getItem('preferredLang')) {
+            currentLang = localStorage.getItem('preferredLang');
+        }
         
-        // 设置初始语言
-        setLanguage(isChinese);
+        // Set initial language
+        updateLanguage(currentLang);
         
+        // Toggle language on button click
         langBtn.addEventListener('click', function() {
-            isChinese = !isChinese;
-            // 保存语言选择到localStorage
-            localStorage.setItem('language', isChinese ? 'chinese' : 'english');
-            setLanguage(isChinese);
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
+            updateLanguage(currentLang);
         });
         
-        // 设置语言函数
-        function setLanguage(isChinese) {
-            // 设置按钮文字
-            langBtn.textContent = isChinese ? 'En' : '中';
+        function updateLanguage(lang) {
+            // Update button text
+            langBtn.textContent = lang === 'en' ? '中' : 'En';
             
-            // 切换所有有data-en和data-zh属性的元素
-            document.querySelectorAll('[data-en], [data-zh]').forEach(element => {
-                if (element.hasAttribute('data-en') && element.hasAttribute('data-zh')) {
-                    if (isChinese) {
-                        element.textContent = element.getAttribute('data-zh');
-                    } else {
-                        element.textContent = element.getAttribute('data-en');
-                    }
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else {
+                    element.textContent = element.getAttribute('data-zh');
                 }
             });
             
-            // 特殊处理标题标签
+            // Update title
             const title = document.querySelector('title');
-            if (isChinese) {
-                title.textContent = title.getAttribute('data-zh');
-            } else {
+            if (lang === 'en') {
                 title.textContent = title.getAttribute('data-en');
+            } else {
+                title.textContent = title.getAttribute('data-zh');
             }
         }
     });
