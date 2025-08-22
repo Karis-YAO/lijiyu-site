@@ -2,10 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title data-en="Research - Prof. Li Jiyu Lab">Research - Prof. Li Jiyu Lab</title>
+    <title data-en="Research - Prof. Li Jiyu Lab" data-zh="学术研究 - 李冀豫课题组">Research - Prof. Li Jiyu Lab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <style>
+        :root{
+            --primary:#005ce6;
+            --text:#000;          /* 黑色文字 */
+            --bg:#fff;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);}
+        body{background:var(--bg);line-height:1.6;}
+        .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+        a{color:var(--primary);}
+        ul{list-style:none;}
+        img{max-width:100%;display:block;}
+
+        .header-flex{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid #ddd;}
+        .logo{font-size:22px;font-weight:600;}
+        nav ul{display:flex;gap:20px;flex-wrap:wrap;}
+
+        .hero{text-align:center;padding:120px 20px;background:url('../img/banner.jpg') center/cover;color:#000;}
+        .hero h2{font-size:38px;margin-bottom:15px;}
+        .btn{background:var(--primary);color:#fff;padding:12px 30px;border-radius:4px;display:inline-block;margin-top:15px;}
+
+        .features{padding:80px 0;background:#fff;}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;}
+        .page-banner{background:#f2f6ff;padding:70px 20px;text-align:center;}
+        .page-banner h2{font-size:32px;}
+        
         /* 左侧三栏导航 */
         .research-nav{display:flex;flex-direction:column;width:220px;margin-right:30px;}
         .research-nav a{padding:12px 16px;margin:4px 0;background:#f7f7f7;border-radius:4px;text-decoration:none;color:#333;font-weight:bold;}
@@ -27,6 +51,37 @@
         .v-card{display:flex;align-items:center;gap:15px;}
         .v-card img{width:660px;height:auto;border-radius:4px;}
         .v-card p{margin:0;font-size:15px;line-height:1.4;}
+        
+        /* 新增样式 */
+        .research-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .research-table th, .research-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .research-table th {
+            background-color: #f2f2f2;
+        }
+        .image-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+        .image-row img {
+            width: 32%;
+            border-radius: 4px;
+        }
+        .key-question {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #005ce6;
+            margin: 20px 0;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -50,21 +105,92 @@
 </header>
 
 <main class="container" style="display:flex;align-items:flex-start;padding-top:40px;">
-    <!-- 左侧三栏导航 -->
+    <!-- 左侧四栏导航 -->
     <nav class="research-nav">
-        <a href="#direction" class="active" data-en="Research Direction" data-zh="研究方向">Research Direction</a>
-        <a href="#achievements" data-en="Achievements" data-zh="研究成果">Achievements</a>
-        <a href="#platform" data-en="Research Platform" data-zh="科研平台">Research Platform</a>
+        <a href="#background" class="active" data-en="Research Background" data-zh="研究背景">研究背景</a>
+        <a href="#direction" data-en="Research Direction" data-zh="研究方向">研究方向</a>
+        <a href="#achievements" data-en="Achievements" data-zh="研究成果">研究成果</a>
+        <a href="#platform" data-en="Research Platform" data-zh="科研平台">科研平台</a>
     </nav>
 
     <!-- 右侧内容区 -->
     <div class="research-content">
+        <!-- ===== 研究背景 ===== -->
+        <section id="background" class="panel">
+            <h3 data-en="Research Background" data-zh="研究背景">研究背景</h3>
+            
+            <h4 data-en="1. Innovation in Intelligent Sensing Technology: National Strategic Needs-Driven Transformation of Health Management Paradigm" 
+                data-zh="一、智能传感技术创新：国家战略需求驱动的健康管理范式变革">
+                一、智能传感技术创新：国家战略需求驱动的健康管理范式变革
+            </h4>
+            <p data-en="Disease management model is shifting from 'passive treatment' to 'active prevention'."
+               data-zh="疾病管理模式从"被动治疗"到"主动预防"转变。">
+                疾病管理模式从"被动治疗"到"主动预防"转变。
+            </p>
+            <div style="text-align:center;margin:20px 0;">
+                <img src="img/ResearchPage/Background1.jpg" alt="Background 1" style="max-width:100%;height:auto;border-radius:4px;">
+            </div>
+            
+            <h4 data-en="2. Current Medical Sensing Technology Cannot Meet the Monitoring Needs of Complex Scenarios" 
+                data-zh="二、当前医用传感技术难以满足复杂场景的监测需求">
+                二、当前医用传感技术难以满足复杂场景的监测需求
+            </h4>
+            <div style="text-align:center;margin:20px 0;">
+                <img src="img/ResearchPage/Background2.jpg" alt="Background 2" style="max-width:100%;height:auto;border-radius:4px;">
+            </div>
+            
+            <h4 data-en="3. Flexible Medical Electronics: A Key Breakthrough in the 'Active Prevention' Health Revolution" 
+                data-zh="三、柔性医用电子："主动预防" 健康变革关键突破口">
+                三、柔性医用电子："主动预防" 健康变革关键突破口
+            </h4>
+            <p data-en="Flexible physiological signal sensing patch" data-zh="柔性生理信号传感贴片">
+                柔性生理信号传感贴片
+            </p>
+            <p>&nbsp;</p>
+            
+            <h5 data-en="1. Application Goal: Long-term Accurate Sensing of Physiological Signals" 
+                data-zh="1.应用目标：生理信号长期精准传感">
+                1.应用目标：生理信号长期精准传感
+            </h5>
+            <div style="text-align:center;margin:20px 0;">
+                <img src="img/ResearchPage/Background3.jpg" alt="Background 3" style="max-width:100%;height:auto;border-radius:4px;">
+            </div>
+            
+            <h5 data-en="2. Performance Indicators" data-zh="2.性能指标">2.性能指标</h5>
+            <table class="research-table">
+                <tr>
+                    <th data-en="Fitting Area" data-zh="贴合区域">贴合区域</th>
+                    <th data-en="Weight" data-zh="重量">重量</th>
+                    <th data-en="Monitoring Method" data-zh="监测方式">监测方式</th>
+                    <th data-en="Cost" data-zh="成本">成本</th>
+                </tr>
+                <tr>
+                    <td data-en="Unrestricted" data-zh="不受限">不受限</td>
+                    <td data-en="Low" data-zh="低">低</td>
+                    <td data-en="Wireless Real-time" data-zh="无线实时">无线实时</td>
+                    <td data-en="Low" data-zh="低">低</td>
+                </tr>
+            </table>
+            
+            <h5 data-en="3. Application Scenarios" data-zh="3.应用场景">3.应用场景</h5>
+            <div class="image-row">
+                <img src="img/ResearchPage/Background4.jpg" alt="Background 4">
+                <img src="img/ResearchPage/Background5.jpg" alt="Background 5">
+                <img src="img/ResearchPage/Background6.jpg" alt="Background 6">
+            </div>
+        </section>
+
         <!-- ===== 研究方向 ===== -->
         <section id="direction" class="panel">
             <h3 data-en="Research Direction—Medical-grade Flexible Medical Electronic Systems"
                 data-zh="研究方向—医疗级柔性医用电子系统的开发">
-                Research Direction—Medical-grade Flexible Medical Electronic Systems
+                研究方向—医疗级柔性医用电子系统的开发
             </h3>
+            
+            <div class="key-question" data-en="Key Scientific Question: How to enable flexible sensing systems to achieve high-precision and stable sensing of medical-grade physiological signals?"
+                data-zh="关键科学问题：如何让柔性传感系统实现医疗级生理信号的高精度与稳定传感？">
+                关键科学问题：如何让柔性传感系统实现医疗级生理信号的高精度与稳定传感？
+            </div>
         
             <!-- 横幅示意图 -->
             <div style="text-align:center;margin:20px 0;">
@@ -76,28 +202,28 @@
                 <ul style="list-style:none;padding-left:0;">
                     <!-- 1 -->
                     <li style="margin-bottom:20px;">
-                        <strong data-en="1. Flexible physiological signal sensor devices" data-zh="1. 柔性生理信号传感器件"></strong>
+                        <strong data-en="1. Flexible physiological signal sensor devices" data-zh="1. 柔性生理信号传感器件">1. 柔性生理信号传感器件</strong>
                         <ul style="margin-left:20px;margin-top:4px;">
-                            <li data-en="Multi-modal physiological signal sensors" data-zh="多模态生理信号传感器"></li>
-                            <li data-en="Flexible medical materials" data-zh="柔性医用材料"></li>
+                            <li data-en="Multi-modal physiological signal sensors" data-zh="多模态生理信号传感器">多模态生理信号传感器</li>
+                            <li data-en="Flexible medical materials" data-zh="柔性医用材料">柔性医用材料</li>
                         </ul>
                     </li>
         
                     <!-- 2 -->
                     <li style="margin-bottom:20px;">
-                        <strong data-en="2. High-power-density flexible electronics" data-zh="2. 高功率密度柔性电子设备"></strong>
+                        <strong data-en="2. High-power-density flexible electronics" data-zh="2. 高功率密度柔性电子设备">2. 高功率密度柔性电子设备</strong>
                         <ul style="margin-left:20px;margin-top:4px;">
-                            <li data-en="Intrinsically stretchable temperature/humidity management technology" data-zh="本征可拉伸柔性温/湿度管理技术"></li>
-                            <li data-en="Flexible power supply systems" data-zh="柔性供能系统"></li>
+                            <li data-en="Intrinsically stretchable temperature/humidity management technology" data-zh="本征可拉伸柔性温/湿度管理技术">本征可拉伸柔性温/湿度管理技术</li>
+                            <li data-en="Flexible power supply systems" data-zh="柔性供能系统">柔性供能系统</li>
                         </ul>
                     </li>
         
                     <!-- 3 -->
                     <li style="margin-bottom:20px;">
-                        <strong data-en="3. AI-driven wearable digital medical systems" data-zh="3. 基于深度学习的穿戴式数字医疗系统"></strong>
+                        <strong data-en="3. AI-driven wearable digital medical systems" data-zh="3. 基于深度学习的穿戴式数字医疗系统">3. 基于深度学习的穿戴式数字医疗系统</strong>
                         <ul style="margin-left:20px;margin-top:4px;">
-                            <li data-en="AI-driven health data analysis" data-zh="人工智能驱动的健康数据分析"></li>
-                            <li data-en="5G remote medical applications" data-zh="5G远程医疗应用"></li>
+                            <li data-en="AI-driven health data analysis" data-zh="人工智能驱动的健康数据分析">人工智能驱动的健康数据分析</li>
+                            <li data-en="5G remote medical applications" data-zh="5G远程医疗应用">5G远程医疗应用</li>
                         </ul>
                     </li>
                 </ul>
@@ -107,14 +233,36 @@
                    data-zh="围绕国家在人民生命健康方面的战略需求，缓解当前医疗资源紧张所带来的压力，切切实实地做出一点贡献。">
                     围绕国家在人民生命健康方面的战略需求，缓解当前医疗资源紧张所带来的压力，切切实实地做出一点贡献。
                 </p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
+                
+                <h4 data-en="Future Work Plan: Patch-type Physiological Signal Sensing System for Long-term Monitoring" 
+                    data-zh="未来工作计划：面向长期监测的贴片式生理信号传感系统">
+                    未来工作计划：面向长期监测的贴片式生理信号传感系统
+                </h4>
+                <div style="text-align:center;margin:20px 0;">
+                    <img src="img/ResearchPage/Direction1.jpg" alt="Direction 1" style="max-width:100%;height:auto;border-radius:4px;">
+                </div>
+                
+                <p data-en="The project will conduct research from three aspects: integration process, regulation technology, and decoupling technology."
+                   data-zh="项目拟从集成工艺 · 调控技术 · 解耦技术三方面开展研究">
+                    项目拟从集成工艺 · 调控技术 · 解耦技术三方面开展研究
+                </p>
+                <div style="text-align:center;margin:20px 0;">
+                    <img src="img/ResearchPage/Direction2.jpg" alt="Direction 2" style="max-width:100%;height:auto;border-radius:4px;">
+                </div>
+                
+                <p data-en="Innovation points and expected results of the proposed work"
+                   data-zh="拟开展工作的创新点及预期成果">
+                    拟开展工作的创新点及预期成果
+                </p>
+                <div style="text-align:center;margin:20px 0;">
+                    <img src="img/ResearchPage/Direction3.jpg" alt="Direction 3" style="max-width:100%;height:auto;border-radius:4px;">
+                </div>
             </div>
         </section>
 
         <!-- 研究成果 -->
         <section id="achievements" class="panel">
-            <h3 data-en="Representative Research" data-zh="代表性研究成果">Representative Research</h3>
+            <h3 data-en="Representative Research" data-zh="代表性研究成果">代表性研究成果</h3>
             <div class="v-gallery">
                 <div class="v-card">
                     <img src="img/ResearchPage/Paper1Title.jpg" alt="Paper 1">
@@ -136,61 +284,109 @@
 
         <!-- 科研平台 -->
         <section id="platform" class="panel">
-            <h3 data-en="Research Platform" data-zh="科研平台">Research Platform</h3>
+            <h3 data-en="Research Platform" data-zh="科研平台">科研平台</h3>
             <div class="v-gallery">
                 <div class="v-card">
                     <img src="img/Instrument1.jpg" alt="Instrument 1">
-                    <p data-en="Clean room" data-zh="洁净间"></p>
+                    <p data-en="Clean room" data-zh="洁净间">洁净间</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument2.jpg" alt="Instrument 2">
-                    <p data-en="3D printer" data-zh="3D打印机"></p>
+                    <p data-en="3D printer" data-zh="3D打印机">3D打印机</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument3.jpg" alt="Instrument 3">
-                    <p data-en="Spin coater" data-zh="旋涂仪"></p>
+                    <p data-en="Spin coater" data-zh="旋涂仪">旋涂仪</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument4.jpg" alt="Instrument 4">
-                    <p data-en="Laser cutter" data-zh="激光切割机"></p>
+                    <p data-en="Laser cutter" data-zh="激光切割机">激光切割机</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument5.jpg" alt="Instrument 5">
-                    <p data-en="SEM" data-zh="扫描电镜"></p>
+                    <p data-en="SEM" data-zh="扫描电镜">扫描电镜</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument6.jpg" alt="Instrument 6">
-                    <p data-en="Electrochemical workstation" data-zh="电化学工作站"></p>
+                    <p data-en="Electrochemical workstation" data-zh="电化学工作站">电化学工作站</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument7.jpg" alt="Instrument 7">
-                    <p data-en="FTIR spectrometer" data-zh="红外光谱仪"></p>
+                    <p data-en="FTIR spectrometer" data-zh="红外光谱仪">红外光谱仪</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument8.jpg" alt="Instrument 8">
-                    <p data-en="Thermal evaporator" data-zh="热蒸发仪"></p>
+                    <p data-en="Thermal evaporator" data-zh="热蒸发仪">热蒸发仪</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument9.jpg" alt="Instrument 9">
-                    <p data-en="Mechanical tester" data-zh="力学测试机"></p>
+                    <p data-en="Mechanical tester" data-zh="力学测试机">力学测试机</p>
                 </div>
                 <div class="v-card">
                     <img src="img/Instrument10.jpg" alt="Instrument 10">
-                    <p data-en="Impedance analyzer" data-zh="阻抗分析仪"></p>
+                    <p data-en="Impedance analyzer" data-zh="阻抗分析仪">阻抗分析仪</p>
                 </div>
             </div>
         </section>
     </div>
 </main>
 
-<script src="js/lang.js"></script>
+<footer>
+    <div class="container">
+        <p data-en="© 2023 Prof. Li Jiyu Lab. All Rights Reserved." data-zh="© 2023 李冀豫课题组 版权所有">© 2023 李冀豫课题组 版权所有</p>
+    </div>
+</footer>
+
 <script>
-    /* 点击左侧导航高亮当前栏目 */
-    document.querySelectorAll('.research-nav a').forEach(a=>{
-        a.addEventListener('click',()=>{
-            document.querySelectorAll('.research-nav a').forEach(el=>el.classList.remove('active'));
-            a.classList.add('active');
+    // 语言切换功能
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        
+        // 从localStorage获取语言设置，如果没有则默认为中文
+        let isChinese = localStorage.getItem('language') !== 'english';
+        
+        // 设置初始语言
+        setLanguage(isChinese);
+        
+        langBtn.addEventListener('click', function() {
+            isChinese = !isChinese;
+            // 保存语言选择到localStorage
+            localStorage.setItem('language', isChinese ? 'chinese' : 'english');
+            setLanguage(isChinese);
         });
+        
+        /* 点击左侧导航高亮当前栏目 */
+        document.querySelectorAll('.research-nav a').forEach(a=>{
+            a.addEventListener('click',()=>{
+                document.querySelectorAll('.research-nav a').forEach(el=>el.classList.remove('active'));
+                a.classList.add('active');
+            });
+        });
+        
+        // 设置语言函数
+        function setLanguage(isChinese) {
+            // 设置按钮文字
+            langBtn.textContent = isChinese ? 'En' : '中';
+            
+            // 切换所有有data-en和data-zh属性的元素
+            document.querySelectorAll('[data-en], [data-zh]').forEach(element => {
+                if (element.hasAttribute('data-en') && element.hasAttribute('data-zh')) {
+                    if (isChinese) {
+                        element.textContent = element.getAttribute('data-zh');
+                    } else {
+                        element.textContent = element.getAttribute('data-en');
+                    }
+                }
+            });
+            
+            // 特殊处理标题标签
+            const title = document.querySelector('title');
+            if (isChinese) {
+                title.textContent = title.getAttribute('data-zh');
+            } else {
+                title.textContent = title.getAttribute('data-en');
+            }
+        }
     });
 </script>
 </body>
