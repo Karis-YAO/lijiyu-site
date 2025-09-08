@@ -5,93 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-en="Join Us - Prof. Li Jiyu Lab" data-zh="招生招聘 - 李冀豫课题组">Join Us - Prof. Li Jiyu Lab</title>
     <style>
-        :root{
-            --primary:#005ce6;
-            --text:#000;          /* 黑色文字 */
-            --bg:#fff;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--text);}
-        body{background:var(--bg);line-height:1.6;}
-        .container{max-width:1100px;margin:0 auto;padding:0 20px;}
-        a{color:var(--primary);}
-        ul{list-style:none;}
-        img{max-width:100%;display:block;}
-
-        .header-flex{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;border-bottom:1px solid #ddd;}
-        .logo{font-size:22px;font-weight:600;}
-        nav ul{display:flex;gap:20px;flex-wrap:wrap;}
-
-        .hero{text-align:center;padding:120px 20px;background:url('../img/banner.jpg') center/cover;color:#000;}
-        .hero h2{font-size:38px;margin-bottom:15px;}
-        .btn{background:var(--primary);color:#fff;padding:12px 30px;border-radius:4px;display:inline-block;margin-top:15px;}
-
-        .features{padding:80px 0;background:#fff;}
-        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;}
-        .page-banner{background:#f2f6ff;padding:70px 20px;text-align:center;}
-        .page-banner h2{font-size:32px;}
-       
-        .profile{
-            max-width:1100px;
-            margin:0 auto;
-            padding:60px 20px;   /* 整体左右 20 px */
-        }
-
-        /* 2. 恢复列表符号，并再往里缩一点 */
-        .profile ul,
-        .profile ol{
-            list-style: disc;
-            padding-left: 40px;      
-            margin: 0 0 1em 0;
-        }
-
-        /* 3. 标题、段落不用再额外加 padding，否则会再往外顶 */
-        .profile h4,
-        .profile p{
-            margin-left: 0;
-            margin-right: 0;
-        }
-        .avatar{width:200px;border-radius:50%;margin:20px auto;display:block;}
-
-        footer{background:#111;color:#fff;text-align:center;padding:20px 0;margin-top:60px;}
         
-        .blue-title {
-            color: #0066cc;
-            font-weight: bold;
-            font-size: 1.4em;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        .section-title {
-            font-weight: bold;
-            margin-top: 1.2em;
-            margin-bottom: 0.5em;
-        }
-        .job-title {
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-top: 1.2em;
-            margin-bottom: 0.5em;
-        }
-        .sub-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-        }
-        ol.custom-list, ul.custom-list {
-            padding-left: 30px;
-            margin-bottom: 1.5em;
-        }
-        ol.custom-list li, ul.custom-list li {
-            margin-bottom: 0.8em;
+        body {
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
         }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        #langBtn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        #langBtn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Page Banner */
+        .page-banner {
+            background: #f2f6ff;
+            padding: 70px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-banner h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50; /* 招生招聘标题颜色 */
+        }
+        
+        /* Content Styles */
+        .content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        /* 修改主标题样式 - 使用与"招生招聘"相同的颜色 */
+        .main-title {
+            color: #2c3e50; /* 改为与"招生招聘"相同的深蓝色 */
+            font-weight: bold;
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-align: center; /* 居中显示 */
+        }
+        
+        .blue-title {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .job-title {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .sub-title {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .custom-list {
+            padding-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .custom-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
         .note {
             font-style: italic;
-            margin-top: 1.5em;
-            padding: 10px;
+            margin-top: 30px;
+            padding: 15px;
             background-color: #f9f9f9;
-            border-left: 3px solid #ccc;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin: 15px 0;
+            }
+            
+            #langBtn {
+                margin-top: 15px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .main-title {
+                font-size: 24px;
+            }
+            
+            .blue-title {
+                font-size: 20px;
+            }
+            
+            .job-title {
+                font-size: 18px;
+            }
+            
+            .sub-title {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -107,7 +240,9 @@
                 <li><a href="group.html" data-en="Group" data-zh="课题组">Group</a></li>
                 <li><a href="research.html" data-en="Research" data-zh="学术研究">Research</a></li>
                 <li><a href="news.html" data-en="News" data-zh="新闻中心">News</a></li>
-                <li><a href="industry.html" data-en="Industry" data-zh="产学研转化">Industry</a></li>
+               <li><a href="industry.html" data-en="Cooperation" data-zh="产研合作">Industry</a></li>
+                <li><a href="media.html" data-en="Media" data-zh="日常剪影">Media</a></li>
+                <li><a href="alumni.html" data-en="Alumni" data-zh="毕业生去向">Alumni</a></li>
                 <li><a href="recruitment.html" data-en="Join Us" data-zh="招生招聘">Join Us</a></li>
                 <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
             </ul>
@@ -117,104 +252,107 @@
 
 <main>
     <section class="page-banner">
-        <h2 data-en="Join Us" data-zh="招生招聘">Join Us</h2>
+        <div class="container">
+            <h2 data-en="Join Us" data-zh="招生招聘">Join Us</h2>
+        </div>
     </section>
 
     <section class="container">
-        <p>&nbsp;</p>
-        
-        <h3 class="blue-title" data-en="Recruitment for Postdocs, Research Assistants and Visiting Scholars - Prof. Li Jiyu's Research Group at Sun Yat-sen University" 
-            data-zh="中山大学李冀豫课题组诚招博士后、科研助理及访问学者">
-            中山大学李冀豫课题组诚招博士后、科研助理及访问学者
-        </h3>
-        
-        <h4 class="blue-title" data-en="Team Introduction" data-zh="团队简介">团队简介</h4>
-        <p data-en="The Flexible Medical Electronics Team at Sun Yat-sen University is primarily engaged in research on wearable medical electronic devices, flexible medical materials, and temperature and humidity management technologies for electronic devices. The team is dedicated to developing long-term stable wearable physiological signal sensing systems and high-power density flexible medical electronic devices, providing key technical support for personalized medical equipment. The team has ample research funding and complete experimental conditions, and plans to recruit several young academic talents, including postdocs, research assistants, and visiting scholars."
-           data-zh="中山大学柔性医用电子团队主要从事穿戴式医疗电子设备、柔性医用材料、电子器件温、湿度管理技术的研究，致力于开发长效稳定的可穿戴生理信号传感系统和高功率密度柔性医用电子器件，为个性化医疗设备提供关键技术支撑。团队研究经费充足、实验条件完备，拟招募多名青年学术骨干加入，主要包括，博士后、科研助理及访问学者。">
-            中山大学柔性医用电子团队主要从事穿戴式医疗电子设备、柔性医用材料、电子器件温、湿度管理技术的研究，致力于开发长效稳定的可穿戴生理信号传感系统和高功率密度柔性医用电子器件，为个性化医疗设备提供关键技术支撑。团队研究经费充足、实验条件完备，拟招募多名青年学术骨干加入，主要包括，博士后、科研助理及访问学者。
-        </p>
-        <p>
-            <span data-en="Research Group Homepage: " data-zh="课题组主页："></span>
-            <a href="https://bme.sysu.edu.cn/teacher/teacher003/1417958.htm" target="_blank" rel="noopener">
-                https://bme.sysu.edu.cn/teacher/teacher003/1417958.htm
-            </a>
-        </p>
-        
-        <h4 class="blue-title" data-en="Job Openings" data-zh="招聘岗位">招聘岗位</h4>
-        
-        <h4 class="job-title" data-en="1. Postdoctoral Researchers" data-zh="一、博士后">一、博士后</h4>
-        <h4 class="sub-title" data-en="Job Requirements:" data-zh="岗位要求：">岗位要求：</h4>
-        <ol class="custom-list">
-            <li data-en="PhD degree (or soon to obtain a PhD) from a renowned university or research institute, age under 35"
-               data-zh="在国内外知名高校或研究院所博士毕业（或即将取得博士学位），年龄不超过35周岁">
-                在国内外知名高校或研究院所博士毕业（或即将取得博士学位），年龄不超过35周岁
-            </li>
-            <li data-en="Independent research capability and good English proficiency, with first-author publications in authoritative international journals"
-               data-zh="具有独立的科研工作能力和良好的英语读写能力，以第一作者身份在国际权威期刊上发表过学术论文">
-                具有独立的科研工作能力和良好的英语读写能力，以第一作者身份在国际权威期刊上发表过学术论文
-            </li>
-            <li data-en="Passion for research, diligence, and good teamwork and communication skills"
-               data-zh="热爱科研、勤奋努力，具有良好的协作沟通能力及团队合作精神">
-                热爱科研、勤奋努力，具有良好的协作沟通能力及团队合作精神
-            </li>
-            <li data-en="Experience with Arduino and PCB circuit design is preferred"
-               data-zh="具备Arduino，PCB电路设计经验者优先考虑">
-                具备Arduino，PCB电路设计经验者优先考虑
-            </li>
-        </ol>
-        
-        <h4 class="sub-title" data-en="Salary and Benefits:" data-zh="薪资待遇：">薪资待遇：</h4>
-        <ol class="custom-list">
-            <li data-en="Competitive salary with social insurance and housing fund"
-               data-zh="提供有竞争力的薪酬待遇，缴纳五险一金">
-                提供有竞争力的薪酬待遇，缴纳五险一金
-            </li>
-            <li data-en="Campus subsidy: Postdocs at Shenzhen campus enjoy work subsidies according to university policies"
-               data-zh="校区补贴：深圳校区的科研博士后，按照学校相关政策享受校区工作补贴">
-                校区补贴：深圳校区的科研博士后，按照学校相关政策享受校区工作补贴
-            </li>
-            <li data-en="Postdocs working in Shenzhen enjoy local financial subsidies"
-               data-zh="在深圳工作的博士后享受深圳市当地财政补贴">
-                在深圳工作的博士后享受深圳市当地财政补贴
-            </li>
-            <li data-en="Selected candidates for various postdoctoral talent programs will receive compensation according to program standards"
-               data-zh="入选各类博士后人才项目的，按照项目薪酬标准执行">
-                入选各类博士后人才项目的，按照项目薪酬标准执行
-            </li>
-            <li data-en="Support with household registration, medical care, and children's education according to university policies"
-               data-zh="在落户、医疗、子女入学方面均有学校政策支持">
-                在落户、医疗、子女入学方面均有学校政策支持
-            </li>
-        </ol>
-        
-        <h4 class="job-title" data-en="2. Visiting Students and Research Assistants" data-zh="二、访问学生及科研助理">二、访问学生及科研助理</h4>
-        <p data-en="Our research group regularly recruits visiting scholars and research assistants, especially welcoming outstanding students with interdisciplinary backgrounds in materials, electronics, mechanical engineering, biomedical engineering, etc. Additionally, the group accepts jointly supervised PhD students and provides corresponding housing subsidies and living allowances. Furthermore, undergraduates are warmly welcome to participate in research practice, and outstanding performers can be directly recommended to pursue a PhD in our research group."
-           data-zh="本课题组常年招收访问学者及科研助理，特别欢迎具有材料、电子、机械、生物医学工程等交叉学科背景的优秀学子加入。此外，课题组同时接收联合培养博士生，并提供相应的租房补贴等生活保障。此外，热忱欢迎本科生参与科研实践，表现优异者可直接推荐攻读本课题组博士学位。">
-            本课题组常年招收访问学者及科研助理，特别欢迎具有材料、电子、机械、生物医学工程等交叉学科背景的优秀学子加入。此外，课题组同时接收联合培养博士生，并提供相应的租房补贴等生活保障。此外，热忱欢迎本科生参与科研实践，表现优异者可直接推荐攻读本课题组博士学位。
-        </p>
-        
-        <h4 class="blue-title" data-en="Application Method" data-zh="应聘方式">应聘方式</h4>
-        <p data-en="Interested applicants should send a CV (including research interests, educational and work experience, research achievements, publications, experimental skills, awards, etc.) along with contact information for two references to:"
-           data-zh="有意向者请提供个人简历（包括研究兴趣、学习和工作经历、科研业绩、发表文章、实验技能、获奖情况等），并附上2名推荐人联系方式发送邮件至：">
-            有意向者请提供个人简历（包括研究兴趣、学习和工作经历、科研业绩、发表文章、实验技能、获奖情况等），并附上2名推荐人联系方式发送邮件至：
-        </p>
-        <p>
-            <a href="mailto:lijy887@mail.sysu.edu.cn">lijy887@mail.sysu.edu.cn</a>
-        </p>
-        <p data-en="Please indicate in the email subject: Position Type + Name + Current Affiliation"
-           data-zh="请在邮件主题注明：应聘类型+姓名+所在单位">
-            请在邮件主题注明：应聘类型+姓名+所在单位
-        </p>
-        <p class="note" data-en="Note: Applicant information will be kept strictly confidential. This recruitment notice is long-term valid."
-           data-zh="注：申请者信息会严格保密，本招聘信息长期有效。">
-            注：申请者信息会严格保密，本招聘信息长期有效。
-        </p>
+        <div class="content">
+            <!-- 修改这里：使用深蓝色标题 -->
+            <h3 class="main-title" data-en="Recruitment for Postdocs, Research Assistants and Visiting Scholars - Prof. Li Jiyu's Research Group at Sun Yat-sen University" 
+                data-zh="中山大学李冀豫课题组诚招博士后、科研助理及访问学者">
+                中山大学李冀豫课题组诚招博士后、科研助理及访问学者
+            </h3>
+            
+            <h4 class="blue-title" data-en="Team Introduction" data-zh="团队简介">团队简介</h4>
+            <p data-en="The Flexible Medical Electronics Team at Sun Yat-sen University is primarily engaged in research on wearable medical electronic devices, flexible medical materials, and temperature and humidity management technologies for electronic devices. The team is dedicated to developing long-term stable wearable physiological signal sensing systems and high-power density flexible medical electronic devices, providing key technical support for personalized medical equipment. The team has ample research funding and complete experimental conditions, and plans to recruit several young academic talents, including postdocs, research assistants, and visiting scholars."
+               data-zh="中山大学柔性医用电子团队主要从事穿戴式医疗电子设备、柔性医用材料、电子器件温、湿度管理技术的研究，致力于开发长效稳定的可穿戴生理信号传感系统和高功率密度柔性医用电子器件，为个性化医疗设备提供关键技术支撑。团队研究经费充足、实验条件完备，拟招募多名青年学术骨干加入，主要包括，博士后、科研助理及访问学者。">
+                中山大学柔性医用电子团队主要从事穿戴式医疗电子设备、柔性医用材料、电子器件温、湿度管理技术的研究，致力于开发长效稳定的可穿戴生理信号传感系统和高功率密度柔性医用电子器件，为个性化医疗设备提供关键技术支撑。团队研究经费充足、实验条件完备，拟招募多名青年学术骨干加入，主要包括，博士后、科研助理及访问学者。
+            </p>
+            <p>
+                <span data-en="Research Group Homepage: " data-zh="课题组主页："></span>
+                <a href="https://bme.sysu.edu.cn/teacher/teacher003/1417958.htm" target="_blank" rel="noopener">
+                    https://bme.sysu.edu.cn/teacher/teacher003/1417958.htm
+                </a>
+            </p>
+            
+            <h4 class="blue-title" data-en="Job Openings" data-zh="招聘岗位">招聘岗位</h4>
+            
+            <h4 class="job-title" data-en="1. Postdoctoral Researchers" data-zh="一、博士后">一、博士后</h4>
+            <h4 class="sub-title" data-en="Job Requirements:" data-zh="岗位要求：">岗位要求：</h4>
+            <ol class="custom-list">
+                <li data-en="PhD degree (or soon to obtain a PhD) from a renowned university or research institute, age under 35"
+                   data-zh="在国内外知名高校或研究院所博士毕业（或即将取得博士学位），年龄不超过35周岁">
+                    在国内外知名高校或研究院所博士毕业（或即将取得博士学位），年龄不超过35周岁
+                </li>
+                <li data-en="Independent research capability and good English proficiency, with first-author publications in authoritative international journals"
+                   data-zh="具有独立的科研工作能力和良好的英语读写能力，以第一作者身份在国际权威期刊上发表过学术论文">
+                    具有独立的科研工作能力和良好的英语读写能力，以第一作者身份在国际权威期刊上发表过学术论文
+                </li>
+                <li data-en="Passion for research, diligence, and good teamwork and communication skills"
+                   data-zh="热爱科研、勤奋努力，具有良好的协作沟通能力及团队合作精神">
+                    热爱科研、勤奋努力，具有良好的协作沟通能力及团队合作精神
+                </li>
+                <li data-en="Experience with Arduino and PCB circuit design is preferred"
+                   data-zh="具备Arduino，PCB电路设计经验者优先考虑">
+                    具备Arduino，PCB电路设计经验者优先考虑
+                </li>
+            </ol>
+            
+            <h4 class="sub-title" data-en="Salary and Benefits:" data-zh="薪资待遇：">薪资待遇：</h4>
+            <ol class="custom-list">
+                <li data-en="Competitive salary with social insurance and housing fund"
+                   data-zh="提供有竞争力的薪酬待遇，缴纳五险一金">
+                    提供有竞争力的薪酬待遇，缴纳五险一金
+                </li>
+                <li data-en="Campus subsidy: Postdocs at Shenzhen campus enjoy work subsidies according to university policies"
+                   data-zh="校区补贴：深圳校区的科研博士后，按照学校相关政策享受校区工作补贴">
+                    校区补贴：深圳校区的科研博士后，按照学校相关政策享受校区工作补贴
+                </li>
+                <li data-en="Postdocs working in Shenzhen enjoy local financial subsidies"
+                   data-zh="在深圳工作的博士后享受深圳市当地财政补贴">
+                    在深圳工作的博士后享受深圳市当地财政补贴
+                </li>
+                <li data-en="Selected candidates for various postdoctoral talent programs will receive compensation according to program standards"
+                   data-zh="入选各类博士后人才项目的，按照项目薪酬标准执行">
+                    入选各类博士后人才项目的，按照项目薪酬标准执行
+                </li>
+                <li data-en="Support with household registration, medical care, and children's education according to university policies"
+                   data-zh="在落户、医疗、子女入学方面均有学校政策支持">
+                    在落户、医疗、子女入学方面均有学校政策支持
+                </li>
+            </ol>
+            
+            <h4 class="job-title" data-en="2. Visiting Students and Research Assistants" data-zh="二、访问学生及科研助理">二、访问学生及科研助理</h4>
+            <p data-en="Our research group regularly recruits visiting scholars and research assistants, especially welcoming outstanding students with interdisciplinary backgrounds in materials, electronics, mechanical engineering, biomedical engineering, etc. Additionally, the group accepts jointly supervised PhD students and provides corresponding housing subsidies and living allowances. Furthermore, undergraduates are warmly welcome to participate in research practice, and outstanding performers can be directly recommended to pursue a PhD in our research group."
+               data-zh="本课题组常年招收访问学者及科研助理，特别欢迎具有材料、电子、机械、生物医学工程等交叉学科背景的优秀学子加入。此外，课题组同时接收联合培养博士生，并提供相应的租房补贴等生活保障。此外，热忱欢迎本科生参与科研实践，表现优异者可直接推荐攻读本课题组博士学位。">
+                本课题组常年招收访问学者及科研助理，特别欢迎具有材料、电子、机械、生物医学工程等交叉学科背景的优秀学子加入。此外，课题组同时接收联合培养博士生，并提供相应的租房补贴等生活保障。此外，热忱欢迎本科生参与科研实践，表现优异者可直接推荐攻读本课题组博士学位。
+            </p>
+            
+            <h4 class="blue-title" data-en="Application Method" data-zh="应聘方式">应聘方式</h4>
+            <p data-en="Interested applicants should send a CV (including research interests, educational and work experience, research achievements, publications, experimental skills, awards, etc.) along with contact information for two references to:"
+               data-zh="有意向者请提供个人简历（包括研究兴趣、学习和工作经历、科研业绩、发表文章、实验技能、获奖情况等），并附上2名推荐人联系方式发送邮件至：">
+                有意向者请提供个人简历（包括研究兴趣、学习和工作经历、科研业绩、发表文章、实验技能、获奖情况等），并附上2名推荐人联系方式发送邮件至：
+            </p>
+            <p>
+                <a href="mailto:lijy887@mail.sysu.edu.cn">lijy887@mail.sysu.edu.cn</a>
+            </p>
+            <p data-en="Please indicate in the email subject: Position Type + Name + Current Affiliation"
+               data-zh="请在邮件主题注明：应聘类型+姓名+所在单位">
+                请在邮件主题注明：应聘类型+姓名+所在单位
+            </p>
+            <p class="note" data-en="Note: Applicant information will be kept strictly confidential. This recruitment notice is long-term valid."
+               data-zh="注：申请者信息会严格保密，本招聘信息长期有效。">
+                注：申请者信息会严格保密，本招聘信息长期有效。
+            </p>
+        </div>
     </section>
 </main>
 
 <footer>
     <div class="container">
-        <p data-en="© 2023 Prof. Li Jiyu Lab. All Rights Reserved." data-zh="© 2023 李冀豫课题组 版权所有">© 2023 李冀豫课题组 版权所有</p>
+        <p data-en="© 2025 Prof. Li Jiyu Lab. All Rights Reserved." data-zh="© 2025 李冀豫课题组 版权所有">© 2025 李冀豫课题组 版权所有</p>
     </div>
 </footer>
 

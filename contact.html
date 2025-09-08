@@ -2,8 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title data-en="Contact - Prof. Li Jiyu Lab">Contact - Prof. Li Jiyu Lab</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Contact - Prof. Li Jiyu Lab" data-zh="联系我们 - 李冀豫课题组">Contact - Prof. Li Jiyu Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        #langBtn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        #langBtn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Page Banner */
+        .page-banner {
+            background: #f2f6ff;
+            padding: 70px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-banner h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        /* Contact Content */
+        .contact-content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        .contact-image {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .divider {
+            border: none;
+            border-top: 1px solid #e6e6e6;
+            margin: 30px 0;
+        }
+        
+        .contact-info {
+            margin-bottom: 25px;
+        }
+        
+        .contact-info strong {
+            color: #2c3e50;
+            font-weight: 600;
+            display: inline-block;
+            min-width: 80px;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin: 15px 0;
+            }
+            
+            #langBtn {
+                margin-top: 15px;
+            }
+            
+            .contact-content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -17,32 +198,109 @@
                 <li><a href="group.html" data-en="Group" data-zh="课题组">Group</a></li>
                 <li><a href="research.html" data-en="Research" data-zh="学术研究">Research</a></li>
                 <li><a href="news.html" data-en="News" data-zh="新闻中心">News</a></li>
-                <li><a href="industry.html" data-en="Industry" data-zh="产学研转化">Industry</a></li>
+                <li><a href="industry.html" data-en="Cooperation" data-zh="产研合作">Industry</a></li>
+                <li><a href="media.html" data-en="Media" data-zh="日常剪影">Media</a></li>
+                <li><a href="alumni.html" data-en="Alumni" data-zh="毕业生去向">Alumni</a></li>
                 <li><a href="recruitment.html" data-en="Join Us" data-zh="招生招聘">Join Us</a></li>
                 <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
+
 <main>
-   <section class="container">
-	  <div style="text-align:center;margin-bottom:1em;">
-	      <img src="img/contact1.jpg" alt="Contact" style="max-width:100%;height:auto;">
-	  </div>
-	  <p>&nbsp;</p>
-	  <hr style="border:none;border-top:1px solid #ccc;margin:1em 0;">
-	  <p>&nbsp;</p>
-       <p><strong>Email:</strong> <a href="mailto:lijy887@mail.sysu.edu.cn">lijy887@mail.sysu.edu.cn</a></p>
-       <p><strong>Phone:</strong> +86&nbsp;14706886208</p>
-       <p>
-           <strong data-en="Address:" data-zh="地址：">Address:</strong>
-           <span data-en="Room 703A, Building 2, Medical Park of Sun Yat-sen University, Shenzhen" 
-                 data-zh="深圳光明区公常路中山大学医学园2栋703A">
-               Room 703A, Building 2, Medical Park of Sun Yat-sen University, Shenzhen
-           </span>
-       </p>
-   </section>
+    <section class="page-banner">
+        <div class="container">
+            <h2 data-en="Contact Us" data-zh="联系我们">Contact Us</h2>
+        </div>
+    </section>
+    
+    <section class="container">
+        <div class="contact-content">
+            <div class="contact-image">
+                <img src="img/contact1.jpg" alt="Contact">
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="contact-info">
+                <p>
+                    <strong data-en="Email:" data-zh="邮箱：">Email:</strong> 
+                    <a href="mailto:lijy887@mail.sysu.edu.cn">lijy887@mail.sysu.edu.cn</a>
+                </p>
+            </div>
+            
+            <div class="contact-info">
+                <p>
+                    <strong data-en="Phone:" data-zh="电话：">Phone:</strong> 
+                    +86 14706886208
+                </p>
+            </div>
+            
+            <div class="contact-info">
+                <p>
+                    <strong data-en="Address:" data-zh="地址：">Address:</strong>
+                    <span data-en="Room 703A, Building 2, Medical Park of Sun Yat-sen University, Shenzhen" 
+                         data-zh="深圳光明区公常路中山大学医学园2栋703A">
+                        Room 703A, Building 2, Medical Park of Sun Yat-sen University, Shenzhen
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
 </main>
-<script src="js/lang.js"></script>
+
+<footer>
+    <div class="container">
+        <p data-en="&copy; 2025 Prof. Li Jiyu Lab. All rights reserved." data-zh="&copy; 2025 李冀豫课题组 版权所有">
+            &copy; 2025 Prof. Li Jiyu Lab. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Language toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        let currentLang = 'en';
+        
+        // Check if language is saved in localStorage
+        if (localStorage.getItem('preferredLang')) {
+            currentLang = localStorage.getItem('preferredLang');
+        }
+        
+        // Set initial language
+        updateLanguage(currentLang);
+        
+        // Toggle language on button click
+        langBtn.addEventListener('click', function() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
+            updateLanguage(currentLang);
+        });
+        
+        function updateLanguage(lang) {
+            // Update button text
+            langBtn.textContent = lang === 'en' ? '中' : 'En';
+            
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else {
+                    element.textContent = element.getAttribute('data-zh');
+                }
+            });
+            
+            // Update title
+            const title = document.querySelector('title');
+            if (lang === 'en') {
+                title.textContent = title.getAttribute('data-en');
+            } else {
+                title.textContent = title.getAttribute('data-zh');
+            }
+        }
+    });
+</script>
 </body>
 </html>

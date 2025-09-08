@@ -2,9 +2,274 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-en="Prof. Li Jiyu Lab" data-zh="李冀豫课题组">Prof. Li Jiyu Lab</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        #langBtn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        #langBtn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+        
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #34495e;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Features Section - 修改为居中布局 */
+        .features {
+            margin: 60px 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 350px); /* 固定三列，每列350px */
+            gap: 30px;
+            justify-content: center; /* 确保网格内容居中 */
+        }
+        
+        .feature-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .feature-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* 图片上的深色遮罩 */
+        }
+        
+        .feature-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            color: white;
+            z-index: 2;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            text-align: center; /* 确保内容居中 */
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            line-height: 1.6;
+        }
+        
+        /* 各个特性栏目的背景图片 - 修改为您的本地图片 */
+        .digital-health .feature-img {
+            background-image: url('img/index/background1.jpg');
+        }
+        
+        .epidermal-electronics .feature-img {
+            background-image: url('img/index/background2.jpg');
+        }
+        
+        .bio-sensing .feature-img {
+            background-image: url('img/index/background3.jpg');
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 350px); /* 中等屏幕改为两列 */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr; /* 小屏幕改为一列 */
+                max-width: 350px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero {
+                padding: 70px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin: 15px 0;
+            }
+            
+            #langBtn {
+                margin-top: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -18,7 +283,9 @@
                 <li><a href="group.html" data-en="Group" data-zh="课题组">Group</a></li>
                 <li><a href="research.html" data-en="Research" data-zh="学术研究">Research</a></li>
                 <li><a href="news.html" data-en="News" data-zh="新闻中心">News</a></li>
-                <li><a href="industry.html" data-en="Industry" data-zh="产学研转化">Industry</a></li>
+                <li><a href="industry.html" data-en="Cooperation" data-zh="产研合作">Industry</a></li>
+                <li><a href="media.html" data-en="Media" data-zh="日常剪影">Media</a></li>
+                <li><a href="alumni.html" data-en="Alumni" data-zh="毕业生去向">Alumni</a></li>
                 <li><a href="recruitment.html" data-en="Join Us" data-zh="招生招聘">Join Us</a></li>
                 <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
             </ul>
@@ -29,25 +296,30 @@
 <main>
     <section class="hero">
         <h2 data-en="Welcome to Prof. Li Jiyu Lab" data-zh="欢迎来到李冀豫教授课题组">Welcome to Prof. Li Jiyu Lab</h2>
-		
-		 <p data-en="Soft Bio-Electronics & AI Healthcare" data-zh="柔性生物电子与智能医疗">Soft Bio-Electronics & AI Healthcare
-		 </p>
-		
+        <p data-en="Soft Bio-Electronics & AI Healthcare" data-zh="柔性生物电子与智能医疗">Soft Bio-Electronics & AI Healthcare</p>
         <a href="about.html" class="btn" data-en="Learn More" data-zh="了解更多">Learn More</a>
     </section>
 
-    <section class="features container grid-3">
-        <div>
-            <h3 data-en="Soft Bio-Electronics" data-zh="柔性生物电子">Soft Bio-Electronics</h3>
-            <p data-en="Next-gen stretchable devices for wearables & implants" data-zh="面向可穿戴与植入式应用">Next-gen stretchable devices for wearables & implants</p>
-        </div>
-        <div>
-            <h3 data-en="AI Healthcare" data-zh="人工智能医疗">AI Healthcare</h3>
-            <p data-en="Integrating AI algorithms with biomedical engineering" data-zh="AI 算法与生物医学工程深度融合">Integrating AI algorithms with biomedical engineering</p>
-        </div>
-        <div>
-            <h3 data-en="Industry Translation" data-zh="产学研协同">Industry Translation</h3>
-            <p data-en="Fast translation from lab to market" data-zh="实验室到市场的快速转化">Fast translation from lab to market</p>
+    <section class="features container">
+        <div class="grid-3">
+            <div class="feature-card digital-health">
+                <div class="feature-img"></div>
+                <div class="feature-content">
+                    <h3 data-en="Digital Health" data-zh="数字健康">Digital Health</h3>
+                </div>
+            </div>
+            <div class="feature-card epidermal-electronics">
+                <div class="feature-img"></div>
+                <div class="feature-content">
+                    <h3 data-en="Epidermal Electronics" data-zh="表皮电子">Epidermal Electronics</h3>
+                </div>
+            </div>
+            <div class="feature-card bio-sensing">
+                <div class="feature-img"></div>
+                <div class="feature-content">
+                    <h3 data-en="Bio-sensing" data-zh="生物传感">Bio-sensing</h3>
+                </div>
+            </div>
         </div>
     </section>
 </main>
@@ -59,6 +331,50 @@
         </p>
     </div>
 </footer>
-<script src="js/lang.js"></script>
+
+<script>
+    // Language toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        let currentLang = 'en';
+        
+        // Check if language is saved in localStorage
+        if (localStorage.getItem('preferredLang')) {
+            currentLang = localStorage.getItem('preferredLang');
+        }
+        
+        // Set initial language
+        updateLanguage(currentLang);
+        
+        // Toggle language on button click
+        langBtn.addEventListener('click', function() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
+            updateLanguage(currentLang);
+        });
+        
+        function updateLanguage(lang) {
+            // Update button text
+            langBtn.textContent = lang === 'en' ? '中' : 'En';
+            
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else {
+                    element.textContent = element.getAttribute('data-zh');
+                }
+            });
+            
+            // Update title
+            const title = document.querySelector('title');
+            if (lang === 'en') {
+                title.textContent = title.getAttribute('data-en');
+            } else {
+                title.textContent = title.getAttribute('data-zh');
+            }
+        }
+    });
+</script>
 </body>
 </html>
