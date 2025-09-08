@@ -2,13 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title data-en="Industry - Prof. Li Jiyu Lab">Industry - Prof. Li Jiyu Lab</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Industry - Prof. Li Jiyu Lab" data-zh="产研合作 - 李冀豫课题组">Industry - Prof. Li Jiyu Lab</title>
     <style>
-        .industry-section{margin-bottom:40px;}
-        .row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
-        .row img{max-width:100%;height:auto;border-radius:4px;}
-        .col{display:flex;flex-direction:column;align-items:center;gap:10px;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        #langBtn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        #langBtn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Page Banner */
+        .page-banner {
+            background: #f2f6ff;
+            padding: 70px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-banner h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        /* Content Styles */
+        .content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        /* Industry Section Styles */
+        .industry-section {
+            margin-bottom: 50px;
+        }
+        
+        .blue-title {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        /* Row and Column Styles */
+        .row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .row img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .row img:hover {
+            transform: translateY(-5px);
+        }
+        
+        .col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .row {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin: 15px 0;
+            }
+            
+            #langBtn {
+                margin-top: 15px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .blue-title {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+            
+            .row {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -24,8 +231,8 @@
                 <li><a href="research.html" data-en="Research" data-zh="学术研究">Research</a></li>
                 <li><a href="news.html" data-en="News" data-zh="新闻中心">News</a></li>
                 <li><a href="industry.html" data-en="Cooperation" data-zh="产研合作">Industry</a></li>
-				<li><a href="media.html" data-en="Media" data-zh="日常剪影">Join Us</a></li>
-				<li><a href="alumni.html" data-en="Alumni" data-zh="毕业生去向">Join Us</a></li>
+                <li><a href="media.html" data-en="Media" data-zh="日常剪影">Media</a></li>
+                <li><a href="alumni.html" data-en="Alumni" data-zh="毕业生去向">Alumni</a></li>
                 <li><a href="recruitment.html" data-en="Join Us" data-zh="招生招聘">Join Us</a></li>
                 <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
             </ul>
@@ -34,53 +241,115 @@
 </header>
 
 <main>
-    <section class="page-banner"><h2 data-en="Industry-Research Cooperation" data-zh="产研合作">Industry-Research Cooperation</h2></section>
-
-    <section class="container industry-section">
-       <br>
-		<h2 data-en="Integration of medicine and engineering: Relevant technologies have carried out cooperation with multiple institutions including universities, hospitals, enterprises, and the military commission."
-            data-zh="医工融合：相关技术已与高校、医院、企业、军委等多单位开展合作">
-			Integration of medicine and engineering: Relevant technologies have carried out cooperation with multiple institutions including universities, hospitals, enterprises, and the military commission.
-        </h2>
-    	<br>
-            <img src="img/Industry/IndustryIntegration.jpg" alt="Industry Integration">
-    </section>
-	
-	<!-- 1. 愿景碳 -->
-	<p>&nbsp;</p>
-	<section class="container industry-section">
-        <h3 data-en="Prof. Li Jiyu Founded Vision Carbon Limited as COO (now Advisor)"
-            data-zh="李冀豫教授以COO身份创立Vision Carbon Limited「愿景碳」有限公司（现为顾问）">
-            Prof. Li Jiyu Founded Vision Carbon Limited as COO (now Advisor)
-        </h3>
-		<br>
-        <div class="row">
-            <img src="img/Industry/IndustryCarbonAward3.jpg" alt="Carbon Award 3">
-			<img src="img/Industry/IndustryCarbonAward1.jpg" alt="Carbon Award 1">
-            <img src="img/Industry/IndustryCarbonAward2.jpg" alt="Carbon Award 2">
+    <section class="page-banner">
+        <div class="container">
+            <h2 data-en="Industry-Research Cooperation" data-zh="产研合作">Industry-Research Cooperation</h2>
         </div>
     </section>
- <p>&nbsp;</p>
-    <!-- 2. 国创赛广东省金奖 -->
-    <section class="container industry-section">
-        <h3 data-en="2025 China College Student Innovation Competition – Guangdong Gold Medal"
-            data-zh="荣获2025年国创赛广东省金奖">
-            2025 China College Student Innovation Competition – Guangdong Gold Medal
-        </h3>
-        <p data-en="Project: FlexiHeal Bio-Tech – Flexible Multimodal Smart Patch for Post-Surgical Vital Sign Monitoring"
-           data-zh="项目名称：《柔愈生物科技——面向外科手术术后生命体征智能检测的柔性多模态智能监测贴片》">
-            Project: FlexiHeal Bio-Tech – Flexible Multimodal Smart Patch for Post-Surgical Vital Sign Monitoring
-        </p>
-        <p data-en="Supervisor: Prof. Li Jiyu / Team: Xiao Tingting, Cai Qingqiao, Xiao Yawen, Sun Jiahao, et al."
-           data-zh="指导老师：李冀豫 / 参赛学生：萧婷婷、蔡青荞、肖雅文、孙佳浩等">
-            Supervisor: Prof. Li Jiyu / Team: Xiao Tingting, Cai Qingqiao, Xiao Yawen, Sun Jiahao, et al.
-        </p>
-		<br>
-		<img src="img/Industry/Industry2025Photo.jpg" alt="2025 Photo.jpg">
+
+    <section class="container">
+        <div class="content">
+            <!-- 医工融合部分 -->
+            <div class="industry-section">
+                <h3 class="blue-title" data-en="Integration of medicine and engineering: Relevant technologies have carried out cooperation with multiple institutions including universities, hospitals, enterprises, and the military commission."
+                    data-zh="医工融合：相关技术已与高校、医院、企业、军委等多单位开展合作">
+                    医工融合：相关技术已与高校、医院、企业、军委等多单位开展合作
+                </h3>
+                <img src="img/Industry/IndustryIntegration.jpg" alt="Industry Integration" style="width: 100%; border-radius: 8px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);">
+            </div>
+            
+            <!-- 愿景碳部分 -->
+            <div class="industry-section">
+                <h3 class="blue-title" data-en="Prof. Li Jiyu Founded Vision Carbon Limited as COO (now Advisor)"
+                    data-zh="李冀豫教授以COO身份创立Vision Carbon Limited「愿景碳」有限公司（现为顾问）">
+                    李冀豫教授以COO身份创立Vision Carbon Limited「愿景碳」有限公司（现为顾问）
+                </h3>
+                <div class="row">
+                    <div class="col">
+                        <img src="img/Industry/IndustryCarbonAward3.jpg" alt="Carbon Award 3" style="max-height: 300px;">
+                    </div>
+                    <div class="col">
+                        <img src="img/Industry/IndustryCarbonAward1.jpg" alt="Carbon Award 1" style="max-height: 300px;">
+                    </div>
+                    <div class="col">
+                        <img src="img/Industry/IndustryCarbonAward2.jpg" alt="Carbon Award 2" style="max-height: 300px;">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 国创赛广东省金奖部分 -->
+            <div class="industry-section">
+                <h3 class="blue-title" data-en="2025 China College Student Innovation Competition – Guangdong Gold Medal"
+                    data-zh="荣获2025年国创赛广东省金奖">
+                    荣获2025年国创赛广东省金奖
+                </h3>
+                <p data-en="Project: FlexiHeal Bio-Tech – Flexible Multimodal Smart Patch for Post-Surgical Vital Sign Monitoring"
+                   data-zh="项目名称：《柔愈生物科技——面向外科手术术后生命体征智能检测的柔性多模态智能监测贴片》">
+                    项目名称：《柔愈生物科技——面向外科手术术后生命体征智能检测的柔性多模态智能监测贴片》
+                </p>
+                <p data-en="Supervisor: Prof. Li Jiyu / Team: Xiao Tingting, Cai Qingqiao, Xiao Yawen, Sun Jiahao, et al."
+                   data-zh="指导老师：李冀豫 / 参赛学生：萧婷婷、蔡青荞、肖雅文、孙佳浩等">
+                    指导老师：李冀豫 / 参赛学生：萧婷婷、蔡青荞、肖雅文、孙佳浩等
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <img src="img/Industry/Industry2025Photo.jpg" alt="2025 Photo" style="max-height: 400px;">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
- <p>&nbsp;</p>
 </main>
 
-<script src="js/lang.js"></script>
+<footer>
+    <div class="container">
+        <p data-en="© 2025 Prof. Li Jiyu Lab. All Rights Reserved." data-zh="© 2025 李冀豫课题组 版权所有">© 2025 李冀豫课题组 版权所有</p>
+    </div>
+</footer>
+
+<script>
+    // Language toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        let currentLang = 'en';
+        
+        // Check if language is saved in localStorage
+        if (localStorage.getItem('preferredLang')) {
+            currentLang = localStorage.getItem('preferredLang');
+        }
+        
+        // Set initial language
+        updateLanguage(currentLang);
+        
+        // Toggle language on button click
+        langBtn.addEventListener('click', function() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            localStorage.setItem('preferredLang', currentLang);
+            updateLanguage(currentLang);
+        });
+        
+        function updateLanguage(lang) {
+            // Update button text
+            langBtn.textContent = lang === 'en' ? '中' : 'En';
+            
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (lang === 'en') {
+                    element.textContent = element.getAttribute('data-en');
+                } else {
+                    element.textContent = element.getAttribute('data-zh');
+                }
+            });
+            
+            // Update title
+            const title = document.querySelector('title');
+            if (lang === 'en') {
+                title.textContent = title.getAttribute('data-en');
+            } else {
+                title.textContent = title.getAttribute('data-zh');
+            }
+        }
+    });
+</script>
 </body>
 </html>
