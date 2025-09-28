@@ -1,14 +1,17 @@
-let currentLang = localStorage.getItem('lang') || 'en';
-function setLang(lang){
-    currentLang = lang;
-    localStorage.setItem('lang', lang);
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-en][data-zh]').forEach(el=>{
-        el.textContent = el.dataset[lang];
+let currentLang=localStorage.getItem('preferredLang')||'en';
+function updateLanguage(lang){
+    document.getElementById('langBtn').textContent=lang==='en'?'中':'En';
+    document.querySelectorAll('[data-en]').forEach(element=>{
+        element.textContent=element.getAttribute(lang==='en'?'data-en':'data-zh');
     });
-    document.getElementById('langBtn').textContent = lang === 'en' ? '中' : 'EN';
+    const title=document.querySelector('title');
+    title.textContent=title.getAttribute(lang==='en'?'data-en':'data-zh');
 }
-document.getElementById('langBtn').addEventListener('click', ()=>{
-    setLang(currentLang === 'en' ? 'zh' : 'en');
+document.addEventListener('DOMContentLoaded',function(){
+    updateLanguage(currentLang);
+    document.getElementById('langBtn').addEventListener('click',function(){
+        currentLang=currentLang==='en'?'zh':'en';
+        localStorage.setItem('preferredLang',currentLang);
+        updateLanguage(currentLang);
+    });
 });
-setLang(currentLang);

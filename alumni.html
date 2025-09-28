@@ -1,9 +1,151 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Alumni - Prof. Li Jiyu Lab" data-zh="毕业生去向 - 李冀豫课题组">Alumni - Prof. Li Jiyu Lab</title>
+    
+    <link rel="preload" href="css/core.css" as="style">
+    <link rel="preload" href="css/header.css" as="style">
+    <link rel="preload" href="css/components.css" as="style">
+    <link rel="preload" href="js/lang.js" as="script">
+    <link rel="preload" href="js/common.js" as="script">
+    
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <style>
+        .alumni-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .alumni-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .alumni-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .alumni-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .alumni-position {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .alumni-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 600px) {
+            .alumni-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-flex">
+            <button id="langBtn" type="button">中</button>
+            <a href="index.html" class="logo" data-en="Prof. Li Jiyu Lab" data-zh="李冀豫课题组">Prof. Li Jiyu Lab</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-en="Home" data-zh="主页">Home</a></li>
+                    <li><a href="about.html" data-en="PI" data-zh="负责人">PI</a></li>
+                    <li><a href="group.html" data-en="Group" data-zh="课题组">Group</a></li>
+                    <li><a href="research.html" data-en="Research" data-zh="学术研究">Research</a></li>
+                    <li><a href="news.html" data-en="News" data-zh="新闻中心">News</a></li>
+                    <li><a href="industry.html" data-en="Cooperation" data-zh="产研合作">Industry</a></li>
+                    <li><a href="media.html" data-en="Media" data-zh="日常剪影">Media</a></li>
+                    <li><a href="alumni.html" data-en="Alumni" data-zh="毕业生去向">Alumni</a></li>
+                    <li><a href="recruitment.html" data-en="Join Us" data-zh="招生招聘">Join Us</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-zh="联系我们">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <h2 data-en="Alumni" data-zh="毕业生去向">Alumni</h2>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <p data-en="Our alumni have gone on to pursue successful careers in academia, industry, and research institutions worldwide. Here are some of our distinguished alumni:"
+                   data-zh="我们的毕业生在学术界、工业界和全球研究机构中取得了成功。以下是我们的一些杰出毕业生：">
+                    我们的毕业生在学术界、工业界和全球研究机构中取得了成功。以下是我们的一些杰出毕业生：
+                </p>
+                
+                <div class="alumni-grid">
+                    <!-- 校友1 -->
+                    <div class="alumni-card">
+                        <div class="alumni-name" data-en="Zhang Wei" data-zh="张伟">张伟</div>
+                        <div class="alumni-position" data-en="Postdoctoral Researcher at MIT" data-zh="麻省理工学院博士后研究员">麻省理工学院博士后研究员</div>
+                        <div class="alumni-description" data-en="Research focus on flexible electronics and biomedical applications."
+                           data-zh="研究方向：柔性电子与生物医学应用">研究方向：柔性电子与生物医学应用</div>
+                    </div>
+                    
+                    <!-- 校友2 -->
+                    <div class="alumni-card">
+                        <div class="alumni-name" data-en="Li Mei" data-zh="李梅">李梅</div>
+                        <div class="alumni-position" data-en="Research Scientist at Google Health" data-zh="Google Health 研究科学家">Google Health 研究科学家</div>
+                        <div class="alumni-description" data-en="Working on AI-driven healthcare solutions."
+                           data-zh="专注于人工智能驱动的医疗解决方案">专注于人工智能驱动的医疗解决方案</div>
+                    </div>
+                    
+                    <!-- 校友3 -->
+                    <div class="alumni-card">
+                        <div class="alumni-name" data-en="Wang Tao" data-zh="王涛">王涛</div>
+                        <div class="alumni-position" data-en="Assistant Professor at Tsinghua University" data-zh="清华大学助理教授">清华大学助理教授</div>
+                        <div class="alumni-description" data-en="Leading research on wearable sensors for health monitoring."
+                           data-zh="领导健康监测可穿戴传感器的研究">领导健康监测可穿戴传感器的研究</div>
+                    </div>
+                    
+                    <!-- 可以继续添加更多校友 -->
+                </div>
+                
+                <div class="blue-title" data-en="Alumni Network" data-zh="校友网络">校友网络</div>
+                <p data-en="We maintain strong connections with our alumni and regularly organize events to foster collaboration and knowledge exchange. If you are an alumnus of our lab, please keep your contact information updated."
+                   data-zh="我们与校友保持紧密联系，定期组织活动促进合作与知识交流。如果您是我们实验室的校友，请及时更新您的联系信息。">
+                    我们与校友保持紧密联系，定期组织活动促进合作与知识交流。如果您是我们实验室的校友，请及时更新您的联系信息。
+                </p>
+                
+                <p data-en="For alumni updates or to get in touch, please contact:"
+                   data-zh="如需更新校友信息或联系我们，请发送邮件至：">
+                    如需更新校友信息或联系我们，请发送邮件至：
+                </p>
+                <p><a href="mailto:lijy887@mail.sysu.edu.cn">lijy887@mail.sysu.edu.cn</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-en="© 2025 Prof. Li Jiyu Lab. All Rights Reserved." data-zh="© 2025 李冀豫课题组 版权所有">© 2025 李冀豫课题组 版权所有</p>
+        </div>
+    </footer>
+
+    <script src="js/lang.js" defer></script>
+    <script src="js/common.js" defer></script>
+</body>
 </html>
